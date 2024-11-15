@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { io } from 'socket.io-client';
 import Card from './Card';
 
-const socket = io('http://localhost:4000');
+const socket = io('https://liars-game.onrender.com');
 
 const Lobby = () => {
     const [roomId, setRoomId] = useState('');
