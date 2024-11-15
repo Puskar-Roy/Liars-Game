@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { io } from 'socket.io-client';
 import Card from './Card';
 
@@ -14,10 +14,14 @@ const Lobby = () => {
     const [chatHistory, setChatHistory] = useState<any[]>([]);
     const [gameStarted, setGameStarted] = useState(false);
     const [playerCards, setPlayerCards] = useState<any>(null);
+    
 
     useEffect(() => {
         if (!username) {
+            setPfpUrl("");
+            setUsername("");
             window.location.href = '/profile';
+            
         }
     }, [username]);
 
